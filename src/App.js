@@ -5,12 +5,11 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState(false);
@@ -71,14 +70,16 @@ function App() {
   
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Navbar title="TextUtils" color='secondary' switchBtnText={switchBtnText} mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
-        <Routes>
-          <Route exact path="/" element={<Textform setAlertMethod={setAlertMethod} title='Enter your text here :' heading='Enter the text to analyze below' mode={mode} />}/>
-          <Route exact path="/about" element={<About />} />
-        </Routes>
-      </Router>
+        <Textform setAlertMethod={setAlertMethod} title='Enter your text here :' heading='Enter the text to analyze below' mode={mode} />
+        {/* <About /> */}
+        {/* <Routes> */}
+          {/* <Route exact path="/" element={<Textform setAlertMethod={setAlertMethod} title='Enter your text here :' heading='Enter the text to analyze below' mode={mode} />}/> */}
+          {/* <Route exact path="/about" element={<About />} /> */}
+        {/* </Routes> */}
+      {/* </Router> */}
     </>
   );
 }
